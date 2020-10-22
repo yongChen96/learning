@@ -1,1 +1,16 @@
-
+server:
+  port: 8081
+spring:
+  profiles:
+    active: dev
+  application:
+    name: knife4j-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

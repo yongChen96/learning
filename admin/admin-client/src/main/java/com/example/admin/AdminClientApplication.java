@@ -1,4 +1,4 @@
-package com.example.gateway;
+package com.example.admin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,10 +9,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-public class Knife4jGatewayApplication {
+public class AdminClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Knife4jGatewayApplication.class, args);
+        SpringApplication.run(AdminClientApplication.class, args);
     }
 
 }
