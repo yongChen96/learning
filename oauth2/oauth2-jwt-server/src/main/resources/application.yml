@@ -1,0 +1,7 @@
+server:
+  port: 9042
+spring:
+  redis:
+    ip: 112.74.161.0
+    port: 6739
+    password: 123456
