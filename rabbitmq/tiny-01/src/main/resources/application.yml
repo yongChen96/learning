@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: rabbit-tiny01
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: /ic
+    username: ic
+    password: admin
+    publisher-returns: true
+    publisher-confirm-type: simple
