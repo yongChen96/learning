@@ -1,0 +1,20 @@
+server:
+  port: 8401
+spring:
+  application:
+    name: sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #≈‰÷√Nacosµÿ÷∑
+    sentinel:
+      transport:
+        dashboard: localhost:8858 #≈‰÷√sentinel dashboardµÿ÷∑
+        port: 8719
+service-url:
+  user-service: http://nacos-user-service
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
