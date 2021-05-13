@@ -1,0 +1,42 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: center-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      routes:
+        - id: center-api-routes
+          uri: lb://center-api
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
+        - id: center-auth-routes
+          uri: lb://center-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://localhost:8081/rsa/publicKey' #配置RSA的公钥访问地址
+  redis:
+    database: 0
+    port: 16379
+    host: localhost
+    password: root
+secure:
+  ignore:
+    urls: #配置白名单路径
+      - "/actuator/**"
+      - "/auth/oauth/token"

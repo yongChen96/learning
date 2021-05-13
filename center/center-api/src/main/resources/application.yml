@@ -1,0 +1,14 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: center-api
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  redis:
+    database: 0
+    port: 16379
+    host: localhost
+    password: root
